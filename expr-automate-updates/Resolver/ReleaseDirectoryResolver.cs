@@ -14,9 +14,9 @@ public class ReleaseDirectoryResolver
 
     public void CopyIgnoreDirectoryBeforeFlush()
     {
-        var releaseDir = _configurationProvider.Get(AppConfigConstants.ReleaseDir);
+        var dir = _configurationProvider.Get(AppConfigConstants.PreviousReleaseDir);
         var ignoreDir = _configurationProvider.Get(AppConfigConstants.IgnoreDir);
-        var preventPath = Path.Combine(releaseDir, ignoreDir);
+        var preventPath = Path.Combine(dir, ignoreDir);
         var tempDir = _configurationProvider.Get(AppConfigConstants.TempDir);
         if (!Directory.Exists(preventPath)) return;
         if (Directory.Exists(tempDir)) Directory.CreateDirectory(tempDir);

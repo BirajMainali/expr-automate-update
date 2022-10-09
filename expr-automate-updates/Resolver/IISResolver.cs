@@ -12,7 +12,7 @@ public class IISResolver
     
     public async Task StartSite(string site)
     {
-        var argument = $"/stop site \"{site}\"";
+        var argument = $"/start site \"{site}\"";
         await Execute(argument);
     }
 
